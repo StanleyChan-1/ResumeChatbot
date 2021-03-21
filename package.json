@@ -1,0 +1,32 @@
+{
+  "name": "resume-chatbot",
+  "version": "1.0.0",
+  "description": "Final Year Project",
+  "main": "server.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StanleyChan-1/ResumeChatbot.git"
+  },
+  "keywords": [
+    "chatbot"
+  ],
+  "author": "Stanley Chan",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "express-ejs-layouts": "^2.5.0",
+    "mongoose": "^5.4.18"
+  },
+  "devDependencies": {
+    "dotenv": "^6.2.0",
+    "nodemon": "^1.18.10"
+  },
+  "bugs": {
+    "url": "https://github.com/StanleyChan-1/ResumeChatbot/issues"
+  },
+  "homepage": "https://github.com/StanleyChan-1/ResumeChatbot#readme"
+}
