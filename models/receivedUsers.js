@@ -9,6 +9,9 @@ const receivedUsersSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  receivetime: {
+    type: String,
+  },
 });
 
 module.exports = mongoose.model("ReceivedUsers", receivedUsersSchema);
