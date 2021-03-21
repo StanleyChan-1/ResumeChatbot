@@ -7,6 +7,15 @@
 <br>
 <% receivedUsers.forEach(receivedUsers=> { %>
     <div>
-        <%= receivedUsers.name %>
+
+        <p>
+            <%= receivedUsers.name %>
+        </p>
+
+        <p>
+            <%= receivedUsers.email %>
+        </p>
+
+        <%= receivedUsers.time %>
     </div>
     <% }) %>
