@@ -17,5 +17,6 @@
         </p>
 
         <%= receivedUsers.receivetime %>
+            <%- include('../partials/deleteForm', { url: `/receivedUsers/${receivedUsers.id}` }) %>
     </div>
     <% }) %>

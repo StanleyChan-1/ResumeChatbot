@@ -41,4 +41,20 @@ router.post("/", async (req, res) => {
   }
 });
 
+// delete User
+router.delete("/:id", async (req, res) => {
+  let receivedUser;
+  try {
+    receivedUser = await ReceivedUser.findById(req.params.id);
+    await ReceivedUser.deleteOne();
+    res.redirect("/receivedUsers");
+  } catch {
+    if (receivedUser == null) {
+      res.redirect("/");
+    } else {
+      res.redirect(`/receivedUsers/${receivedUser.id}`);
+    }
+  }
+});
+
 module.exports = router;
