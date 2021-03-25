@@ -1,0 +1,21 @@
+<h2>Search Users</h2>
+<form action="/chatbotRespones" method="GET">
+    <label>Intent</label>
+    <input type="text" name="intent" value="<%= searchOptions.intent %>">
+    <button type="submit">Search</button>
+</form>
+<br>
+<% chatbotRespones.forEach(chatbotRespones=> { %>
+    <div>
+
+        <p>
+            <%= chatbotRespones.intent %>
+        </p>
+
+        <p>
+            <%= chatbotRespones.content %>
+        </p>
+
+
+    </div>
+    <% }) %>

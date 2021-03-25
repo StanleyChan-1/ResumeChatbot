@@ -11,6 +11,7 @@ const methodOverride = require("method-override");
 const indexRouter = require("./routes/index");
 const receivedUsersRouter = require("./routes/receivedUsers");
 const chatbotDocumentRouter = require("./routes/chatbotDocuments");
+const chatbotResponeRouter = require("./routes/chatbotRespone");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -29,5 +30,5 @@ db.once("open", () => console.log("Connected to Mongoose"));
 app.use("/", indexRouter);
 app.use("/receivedUsers", receivedUsersRouter);
 app.use("/chatbotDocuments", chatbotDocumentRouter);
-
+app.use("/chatbotRespones", chatbotResponeRouter);
 app.listen(process.env.PORT || 3000);

@@ -8,8 +8,18 @@
 
     <button type="submit">Search</button>
 </form>
-<div>
-    <% chatbotDocuments.forEach(chatbotDocuments=> { %>
-        <img height="450" width="400" src="<%= chatbotDocuments.coverImagePath %>">
-        <% }) %>
-</div>
+
+<% chatbotDocuments.forEach(chatbotDocuments=> { %>
+    <div style="background:blanchedalmond">
+        <h3>
+            <%= chatbotDocuments.title %>
+        </h3>
+        <p>
+            <%= chatbotDocuments.description %>
+        </p>
+        <img height="250" width="200" src="<%= chatbotDocuments.coverImagePath %>">
+        <p>
+            <%= chatbotDocuments.uploadAt %>
+        </p>
+    </div>
+    <% }) %>
