@@ -24,6 +24,48 @@ router.get("/new", (req, res) => {
   res.render("chatbotRespones/new", { chatbotRespone: new ChatbotRespone() });
 });
 
+router.get("/newIntroduction", (req, res) => {
+  res.render("chatbotRespones/new", {
+    chatbotRespone: new ChatbotRespone(),
+    intent: "introduction",
+  });
+});
+
+router.get("/newProject", (req, res) => {
+  res.render("chatbotRespones/new", {
+    chatbotRespone: new ChatbotRespone(),
+    intent: "project",
+  });
+});
+
+router.get("/newSkills", (req, res) => {
+  res.render("chatbotRespones/new", {
+    chatbotRespone: new ChatbotRespone(),
+    intent: "Skills",
+  });
+});
+
+router.get("/newWorkingExperience", (req, res) => {
+  res.render("chatbotRespones/new", {
+    chatbotRespone: new ChatbotRespone(),
+    intent: "working experience",
+  });
+});
+
+router.get("/newEducation", (req, res) => {
+  res.render("chatbotRespones/new", {
+    chatbotRespone: new ChatbotRespone(),
+    intent: "education",
+  });
+});
+
+router.get("/newWelcomeRespone", (req, res) => {
+  res.render("chatbotRespones/new", {
+    chatbotRespone: new ChatbotRespone(),
+    intent: "Default Welcome Intent",
+  });
+});
+
 // Create ChatbotRespone Route
 router.post("/", async (req, res) => {
   const chatbotRespone = new ChatbotRespone({
@@ -34,7 +76,7 @@ router.post("/", async (req, res) => {
       text: req.body.text,
     },
   });
-  console.log(req.body);
+
   try {
     const newChatbotRespone = await chatbotRespone.save();
 
@@ -44,7 +86,7 @@ router.post("/", async (req, res) => {
       chatbotRespone: chatbotRespone,
       errorMessage: "Error creating User",
     });
-    console.log(e);
+    console.log(req.body);
   }
 });
 

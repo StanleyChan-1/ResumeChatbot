@@ -75,21 +75,47 @@ btn.onclick = (event) => {
       break;
     case "list":
       {
+        panel.innerHTML = `    <div class="chatbot-respones-field">
+        <label>Title</label>
+        <input type="text" name="title" value="" placeholder="List item title">
+    </div>
+
+    <div class="chatbot-respones-field">
+        <label>Subtitle</label>
+        <input type="text" name="subtitle" value="" placeholder="List item subtitle">
+    </div>`;
       }
       break;
-    case "accordion":
+    case "accordtion":
       {
+        panel.innerHTML = `    <div class="chatbot-respones-field">
+        <label>Title</label>
+        <input type="text" name="title" value="" placeholder="List item title">
+    </div>
+
+    <div class="chatbot-respones-field">
+        <label>Subtitle</label>
+        <input type="text" name="subtitle" value="" placeholder="List item subtitle">
+    </div>
+
+    <div class="chatbot-respones-field">
+        <label>Image Source</label>
+        <input type="url" name="rawUrl" value="" placeholder="https://example.com/images/logo.png">
+    </div>
+
+    <div class="chatbot-respones-field">
+        <label>Text</label>
+        <input type="text" name="subtitle" value="" placeholder="Accordion text">
+    </div>`;
       }
       break;
     case "suggestion chip":
       {
       }
       break;
-    case "combining":
-      {
-      }
-      break;
+
     default: {
+      console.log("none");
     }
   }
 };
