@@ -111,6 +111,21 @@ btn.onclick = (event) => {
       break;
     case "suggestion chip":
       {
+        panel.innerHTML = `    <div class="chatbot-respones-field">
+        <label>Text</label>
+        <input type="text" name="text" value = "" placeholder="Chip 1">
+
+    </div>
+
+    <div class="chatbot-respones-field">
+        <label>Image Source</label>
+        <input type="url" name="rawUrl" value="" placeholder="https://example.com/images/logo.png">
+    </div>
+
+    <div class="chatbot-respones-field">
+        <label>Action Link</label>
+        <input type="url" name="link" value="" placeholder="https://example.com">
+    </div>`;
       }
       break;
 
