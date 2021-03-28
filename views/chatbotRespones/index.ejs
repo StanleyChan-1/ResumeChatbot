@@ -1,21 +1,24 @@
 <h2>Search Users</h2>
 <form action="/chatbotRespones" method="GET">
     <label>Intent</label>
-    <input type="text" name="intent" value="<%= searchOptions.intent %>">
+    <select name="intent">
+        <% intent.forEach(intent=> { %>
+            <option value=<%=intent %> name="intent">
+                <%= intent %>
+            </option>
+            <% }) %>
+    </select>
+
     <button type="submit">Search</button>
 </form>
 <br>
 <% chatbotRespones.forEach(chatbotRespones=> { %>
     <div>
 
-        <p>
-            <%= chatbotRespones.intent %>
-        </p>
-
-        <p>
-            <%= chatbotRespones.content %>
-        </p>
-
+        <span>
+            <%= chatbotRespones.content.type %>
+        </span>
+        <%- include('../partials/deleteForm', { url: `/chatbotRespones/${chatbotRespones.id}` }) %>
 
     </div>
     <% }) %>

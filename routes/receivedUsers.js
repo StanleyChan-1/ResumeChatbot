@@ -46,7 +46,7 @@ router.delete("/:id", async (req, res) => {
   let receivedUser;
   try {
     receivedUser = await ReceivedUser.findById(req.params.id);
-    await ReceivedUser.deleteOne();
+    await receivedUser.deleteOne();
     res.redirect("/receivedUsers");
   } catch {
     if (receivedUser == null) {

@@ -11,4 +11,4 @@ const chatbotResponeSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("ChatbotRespones", chatbotResponeSchema);
+module.exports = mongoose.model("chatbotrespones", chatbotResponeSchema);

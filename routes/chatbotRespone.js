@@ -5,6 +5,14 @@ const ChatbotRespone = require("../models/chatbotRespone");
 // All ChatbotRespone Route
 router.get("/", async (req, res) => {
   let searchOptions = {};
+  const intent = [
+    "introduction",
+    "project",
+    "Skills",
+    "working experience",
+    "education",
+    "Default Welcome Intent",
+  ];
   if (req.query.intent != null && req.query.intent !== "") {
     searchOptions.intent = new RegExp(req.query.intent, "i");
   }
@@ -13,6 +21,7 @@ router.get("/", async (req, res) => {
     res.render("chatbotRespones/index", {
       chatbotRespones: chatbotRespones,
       searchOptions: req.query,
+      intent: intent,
     });
   } catch {
     res.redirect("/");
@@ -95,9 +104,10 @@ router.delete("/:id", async (req, res) => {
   let chatbotRespone;
   try {
     chatbotRespone = await ChatbotRespone.findById(req.params.id);
+
     await chatbotRespone.deleteOne();
     res.redirect("/chatbotRespones");
-  } catch {
+  } catch (e) {
     if (chatbotRespone == null) {
       res.redirect("/");
     } else {

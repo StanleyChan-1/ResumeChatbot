@@ -10,14 +10,18 @@
 </form>
 
 <% chatbotDocuments.forEach(chatbotDocuments=> { %>
-    <div style="background:blanchedalmond">
+    <div style="background:blanchedalmond ">
         <h3>
             <%= chatbotDocuments.title %>
         </h3>
         <p>
             <%= chatbotDocuments.description %>
         </p>
-        <img height="250" width="200" src="<%= chatbotDocuments.coverImagePath %>">
+
+        <img width="200" height="200" src="<%= chatbotDocuments.coverImagePath %>">
+
+
+
         <p>
             <%= chatbotDocuments.uploadAt %>
         </p>
