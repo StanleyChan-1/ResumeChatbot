@@ -37,9 +37,25 @@ router.post("/", async (req, res) => {
   try {
     const newChatbotDocument = await chatbotDocument.save();
 
-    res.redirect(`chatbotDocuments/${newChatbotDocument.id}`);
+    // res.redirect(`chatbotDocuments/${newChatbotDocument.id}`);
+    res.redirect(`chatbotDocuments/`);
   } catch {
     renderNewPage(res, chatbotDocument, true);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  let chatbotDocument;
+  try {
+    chatbotDocument = await ChatbotDocument.findById(req.params.id);
+    await chatbotDocument.remove();
+    res.redirect("/chatbotDocuments");
+  } catch {
+    if (chatbotDocument != null) {
+      res.redirect("/chatbotDocuments");
+    } else {
+      res.redirect(`/`);
+    }
   }
 });
 

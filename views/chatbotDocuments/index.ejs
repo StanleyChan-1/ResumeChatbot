@@ -25,5 +25,7 @@
         <p>
             <%= chatbotDocuments.uploadAt %>
         </p>
+        <%- include('../partials/deleteForm', { url: `/chatbotDocuments/${chatbotDocuments.id}` }) %>
+
     </div>
     <% }) %>
